@@ -804,6 +804,22 @@ function worker(parent,P,x,y,z,o={}){
   }
   return g;
 }
+/* Firmenlogo-Abzeichen (Dreiecksmarke) auf eine flache y-Fläche gemalt */
+function brandMark(parent,P,x,y,z,w,h,scale,peakColor,accentColor){
+  const map=(u,v)=>{
+    const uu=0.5+(u-0.5)*scale, vv=0.5+(v-0.5)*scale;
+    return [x+uu*w, y, z+h*(1-vv)];
+  };
+  poly(parent,P,[[0.5,0.05],[0.06,0.95],[0.94,0.95]].map(p=>map(p[0],p[1])),peakColor);
+  poly(parent,P,[[0.32,0.52],[0.48,0.95],[0.18,0.95]].map(p=>map(p[0],p[1])),accentColor);
+}
+function badgePanel(parent,P,x,y,z,w,h,scale,color){
+  const map=(u,v)=>{
+    const uu=0.5+(u-0.5)*scale, vv=0.5+(v-0.5)*scale;
+    return [x+uu*w, y, z+h*(1-vv)];
+  };
+  poly(parent,P,[[0,0],[1,0],[1,1],[0,1]].map(p=>map(p[0],p[1])),color);
+}
 function slopeRows(P,x0,x1,yR,zR,yE,zE,rows,c,d0,step){
   for(let i=0;i<rows;i++){
     const t0=1-i/rows, t1=1-(i+1)/rows;
@@ -926,23 +942,40 @@ function buildScene(){
   poly(ridge,P,[[X0-0.45,RY,ZR+0.22],[X1+0.45,RY,ZR+0.22],[X1+0.45,RY-0.35,ZR+0.02],[X0-0.45,RY-0.35,ZR+0.02]],shade(C.tile,1.1));
   worker(piece(6.9),P,4.3,7.0,ZR+0.2,{bob:true});
 
-  /* Firmen-Transporter */
+  /* Firmen-Transporter (Kabine + Kofferaufbau + Räder + Logo) */
   const van=piece(7.1);
-  box(van,P,0.6,11.6,0.3,2.1,1.05,0.8,'#1a1a1f');
-  box(van,P,0.58,11.58,0.58,2.14,1.09,0.16,C.yellow);
-  poly(van,P,[[0.78,12.68,0.78],[1.25,12.68,0.78],[1.25,12.68,1.02],[0.78,12.68,1.02]],'#9fc4d4');
-  [[1.0,12.68],[2.3,12.68]].forEach(w=>{
-    const c=P(w[0],w[1],0.3);
-    el('ellipse',{cx:c[0],cy:c[1],rx:9,ry:6.5,fill:'#111'},van);
-    el('ellipse',{cx:c[0],cy:c[1],rx:4,ry:3,fill:'#555'},van);
+  const TX=0.35, TY=12.62, TD=0.85, CARGO_W=1.15, CAB_W=0.55, Z0=0.3, CARGO_H=0.66, CAB_H=0.5;
+  /* Radstand / Schürze */
+  box(van,P,TX,TY,Z0-0.08,CARGO_W+CAB_W,TD,0.08,'#22252a');
+  [TX+0.32,TX+CARGO_W+CAB_W-0.22].forEach(wx=>{
+    const wc=P(wx,TY+TD,0.3);
+    el('ellipse',{cx:wc[0],cy:wc[1],rx:9,ry:6.5,fill:'#111'},van);
+    el('ellipse',{cx:wc[0],cy:wc[1],rx:4,ry:3,fill:'#555'},van);
   });
+  /* Kofferaufbau (gelb, mit Firmenlogo) */
+  box(van,P,TX,TY,Z0,CARGO_W,TD,CARGO_H,C.yellow);
+  badgePanel(van,P,TX,TY+TD,Z0,CARGO_W,CARGO_H,0.62,'#141416');
+  brandMark(van,P,TX,TY+TD,Z0,CARGO_W,CARGO_H,0.42,C.yellow,'#f4f4f4');
+  /* Fahrerkabine */
+  box(van,P,TX+CARGO_W,TY,Z0,CAB_W,TD,CAB_H,'#eef0f2');
+  poly(van,P,[
+    [TX+CARGO_W+0.08,TY+TD,Z0+CAB_H*0.4],
+    [TX+CARGO_W+CAB_W-0.06,TY+TD,Z0+CAB_H*0.4],
+    [TX+CARGO_W+CAB_W-0.06,TY+TD,Z0+CAB_H*0.94],
+    [TX+CARGO_W+0.08,TY+TD,Z0+CAB_H*0.94]
+  ],'#bcdce8',{stroke:'#fff',sw:2});
+  poly(van,P,[
+    [TX+CARGO_W+CAB_W,TY+0.12,Z0+0.06],
+    [TX+CARGO_W+CAB_W,TY+0.34,Z0+0.06],
+    [TX+CARGO_W+CAB_W,TY+0.34,Z0+0.2],
+    [TX+CARGO_W+CAB_W,TY+0.12,Z0+0.2]
+  ],'#ffe27a');
 
   /* Firmenschild */
   const sign=piece(7.3);
   box(sign,P,10.0,11.7,0,0.12,0.12,1.05,'#2a2d33');
   box(sign,P,9.55,11.62,1.05,1.05,0.12,0.75,'#16161a');
-  const s1=P(9.72,11.76,1.16),s2=P(10.02,11.76,1.62),s3=P(10.32,11.76,1.16);
-  el('polygon',{points:`${s1[0]},${s1[1]} ${s2[0]},${s2[1]} ${s3[0]},${s3[1]}`,fill:C.yellow},sign);
+  brandMark(sign,P,9.55,11.74,1.05,1.05,0.75,0.72,C.yellow,'#141416');
 
   /* Busch vorn */
   const bush=piece(7.4);
