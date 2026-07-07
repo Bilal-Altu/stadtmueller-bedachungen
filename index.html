@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STADTMÜLLER BEDACHUNGEN – Dach-, Wand- &amp; Abdichtungstechnik</title>
+<meta name="description" content="STADTMÜLLER BEDACHUNGEN – Ihr kompetenter Ansprechpartner rund ums Thema Dach in den Metropolregionen Rhein-Neckar und Rhein-Main. Seit über 80 Jahren.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e8e9eb;
+  --panel:#f5f6f7;
+  --card:#ffffff;
+  --ink:#141416;
+  --ink-soft:#4c4f55;
+  --line:#d5d7db;
+  --yellow:#ffd400;
+  --yellow-deep:#f2c400;
+  --terra:#c65b3d;
+  --outline:#c9ccd1;
+  --radius:26px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--yellow);color:var(--ink)}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+
+/* ---------- Header ---------- */
+header.site{
+  position:sticky;top:0;z-index:60;
+  background:rgba(232,233,235,.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.05);
+}
+.site-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.logo svg{height:46px;width:auto}
+nav.main{display:flex;flex-wrap:wrap;gap:4px}
+nav.main a{
+  text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.02em;
+  padding:8px 14px;border-radius:999px;color:var(--ink-soft);
+  transition:background .2s,color .2s;
+}
+nav.main a:hover{background:var(--ink);color:#fff}
+nav.main a.cta{background:var(--yellow);color:var(--ink)}
+nav.main a.cta:hover{background:var(--ink);color:var(--yellow)}
+
+/* ---------- Hero ---------- */
+.hero{padding:clamp(18px,3vw,36px) 0 clamp(30px,4vw,56px)}
+.hero-frame{
+  background:var(--panel);
+  border-radius:calc(var(--radius) + 8px);
+  padding:clamp(18px,3vw,44px);
+  display:grid;
+  grid-template-columns:minmax(150px,300px) 1fr;
+  gap:clamp(16px,3vw,40px);
+  align-items:stretch;
+  box-shadow:0 30px 60px -35px rgba(20,20,22,.25);
+}
+.hero-left{display:flex;flex-direction:row;gap:clamp(12px,1.6vw,26px);align-items:flex-end;padding:8px 0}
+.hero-vert{
+  writing-mode:vertical-rl;transform:rotate(180deg);
+  font-size:clamp(52px,7.2vw,118px);
+  font-weight:900;letter-spacing:.04em;line-height:.95;
+  color:transparent;-webkit-text-stroke:2px var(--outline);text-stroke:2px var(--outline);
+  user-select:none;white-space:nowrap;
+}
+.hero-meta{writing-mode:vertical-rl;transform:rotate(180deg);
+  font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#9a9da3;
+  max-height:520px;overflow:hidden}
+.hero-stage{
+  position:relative;
+  background:linear-gradient(180deg,#dce8ee 0%,#eef2f3 68%,#f6f7f7 100%);
+  border-radius:var(--radius);
+  overflow:hidden;
+  min-height:420px;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.04);
+}
+.hero-stage svg.scene{width:100%;height:100%;position:absolute;inset:0}
+.stage-caption{
+  position:absolute;left:18px;bottom:16px;z-index:5;
+  background:rgba(255,255,255,.86);backdrop-filter:blur(6px);
+  border-radius:16px;padding:12px 18px;max-width:340px;
+  box-shadow:0 12px 30px -14px rgba(20,20,22,.35);
+}
+.stage-caption strong{display:block;font-size:14px;letter-spacing:.06em}
+.stage-caption span{font-size:12.5px;color:var(--ink-soft)}
+.replay{
+  position:absolute;right:16px;bottom:16px;z-index:5;
+  width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;
+  background:var(--ink);color:var(--yellow);font-size:20px;
+  display:grid;place-items:center;
+  box-shadow:0 12px 24px -10px rgba(20,20,22,.5);
+  transition:transform .2s,background .2s;
+}
+.replay:hover{transform:rotate(-40deg) scale(1.06)}
+.hero-tag{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
+  padding:26px clamp(4px,1vw,10px) 0;
+}
+.hero-tag h1{font-size:clamp(20px,2.6vw,30px);font-weight:800;letter-spacing:-.01em}
+.hero-tag h1 em{font-style:normal;background:var(--yellow);padding:0 8px;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:999px;text-decoration:none;
+  font-weight:700;font-size:14.5px;letter-spacing:.02em;
+  transition:transform .15s,box-shadow .2s,background .2s,color .2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{box-shadow:0 14px 26px -12px rgba(20,20,22,.55)}
+.btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-yellow:hover{box-shadow:0 14px 26px -12px rgba(242,196,0,.7)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--ink)}
+
+/* ---------- Sections ---------- */
+section{padding:clamp(44px,6vw,86px) 0}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#8b8e94;
+  margin-bottom:14px;
+}
+.kicker::before{content:"";width:34px;height:3px;background:var(--yellow);border-radius:2px}
+h2.big{
+  font-size:clamp(34px,5vw,64px);font-weight:900;letter-spacing:-.015em;line-height:1.02;
+  margin-bottom:22px;
+}
+h2.big .ghost{color:transparent;-webkit-text-stroke:2px var(--outline)}
+.lead{max-width:760px;color:var(--ink-soft);font-size:clamp(15.5px,1.4vw,18px)}
+
+/* Willkommen */
+.welcome-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(22px,3.5vw,54px);align-items:start;margin-top:34px}
+.welcome-text p{margin-bottom:16px;color:var(--ink-soft)}
+.welcome-text p strong{color:var(--ink)}
+.fact-stack{display:grid;gap:14px;position:sticky;top:96px}
+.fact{
+  background:var(--card);border-radius:20px;padding:22px 24px;
+  display:flex;gap:16px;align-items:center;
+  box-shadow:0 18px 36px -26px rgba(20,20,22,.3);
+}
+.fact .num{font-size:34px;font-weight:900;line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.fact .num small{font-size:16px;font-weight:800;color:var(--terra)}
+.fact p{font-size:13.5px;color:var(--ink-soft);line-height:1.45}
+.mgmt{
+  margin-top:18px;background:var(--ink);color:#fff;border-radius:20px;padding:22px 24px;
+}
+.mgmt .k{font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--yellow);margin-bottom:8px}
+.mgmt strong{font-size:18px;display:block}
+.mgmt span{font-size:13px;color:#b9bcc2}
+
+/* Leistungen */
+#leistungen{background:var(--panel);border-radius:calc(var(--radius) + 8px);margin:0 clamp(6px,1.4vw,20px)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:36px}
+.card{
+  background:var(--card);border-radius:22px;padding:26px 26px 20px;
+  display:flex;flex-direction:column;gap:12px;
+  box-shadow:0 20px 40px -30px rgba(20,20,22,.35);
+  transition:transform .25s,box-shadow .25s;
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 30px 50px -30px rgba(20,20,22,.45)}
+.card .icon{width:92px;height:80px;background:var(--panel);border-radius:16px;display:grid;place-items:center;padding:6px}
+.card h3{font-size:19px;font-weight:800;letter-spacing:-.01em}
+.card p{font-size:14.5px;color:var(--ink-soft)}
+.card details{margin-top:auto;font-size:14.5px;color:var(--ink-soft)}
+.card details p{margin-top:10px}
+.card summary{
+  cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;
+  font-weight:700;font-size:13.5px;color:var(--ink);
+  padding:8px 0;user-select:none;
+}
+.card summary::-webkit-details-marker{display:none}
+.card summary::after{content:"+";width:22px;height:22px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-weight:800;transition:transform .25s}
+.card details[open] summary::after{transform:rotate(45deg)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{background:var(--panel);border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:600;color:var(--ink-soft)}
+
+/* Dach-Experte band */
+.expert{
+  margin-top:26px;
+  background:var(--ink);color:#fff;border-radius:26px;
+  padding:clamp(28px,4vw,48px);
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,44px);align-items:center;
+}
+.expert .icon{width:130px;height:116px;background:rgba(255,255,255,.07);border-radius:20px;display:grid;place-items:center;padding:8px}
+.expert h3{font-size:clamp(24px,3vw,36px);font-weight:900;letter-spacing:-.01em;margin-bottom:12px}
+.expert h3 span{color:var(--yellow)}
+.expert p{color:#c3c6cc;font-size:15px;margin-bottom:12px;max-width:820px}
+
+/* Dachformen */
+.roof-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;margin-top:36px}
+.roof-card{
+  background:var(--card);border-radius:22px;overflow:hidden;
+  box-shadow:0 20px 40px -30px rgba(20,20,22,.35);
+  display:flex;flex-direction:column;
+  transition:transform .25s;
+}
+.roof-card:hover{transform:translateY(-5px)}
+.roof-pic{background:linear-gradient(180deg,#dce8ee,#eef2f3);padding:10px;display:grid;place-items:center}
+.roof-pic svg{width:190px;height:150px}
+.roof-body{padding:22px 26px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.roof-body h3{font-size:20px;font-weight:800}
+.roof-body .sub{font-size:13px;font-weight:700;color:var(--terra);letter-spacing:.04em;text-transform:uppercase}
+.roof-body p{font-size:14.5px;color:var(--ink-soft)}
+.roof-body details{margin-top:auto;font-size:14.5px;color:var(--ink-soft)}
+.roof-body details p{margin-top:10px}
+.roof-body summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13.5px;color:var(--ink);padding:8px 0;user-select:none}
+.roof-body summary::-webkit-details-marker{display:none}
+.roof-body summary::after{content:"+";width:22px;height:22px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;font-weight:800;transition:transform .25s}
+.roof-body details[open] summary::after{transform:rotate(45deg)}
+
+/* Team / Besichtigung */
+#kontakt{background:var(--panel);border-radius:calc(var(--radius) + 8px);margin:0 clamp(6px,1.4vw,20px)}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:36px}
+.person{
+  background:var(--card);border-radius:22px;padding:28px;
+  box-shadow:0 20px 40px -30px rgba(20,20,22,.35);
+}
+.person .avatar{
+  width:74px;height:74px;border-radius:22px;background:var(--yellow);
+  display:grid;place-items:center;font-size:26px;font-weight:900;margin-bottom:16px;
+}
+.person h3{font-size:20px;font-weight:800}
+.person .role{font-size:13px;font-weight:700;color:var(--terra);text-transform:uppercase;letter-spacing:.05em;margin:4px 0 10px}
+.person p{font-size:14px;color:var(--ink-soft)}
+.person .contact{margin-top:14px;display:grid;gap:6px;font-size:14.5px;font-weight:600}
+.person .contact a{text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.person .contact a:hover{color:var(--terra)}
+.visit-note{
+  margin-top:18px;background:var(--card);border-radius:22px;padding:26px 28px;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;
+  box-shadow:0 20px 40px -30px rgba(20,20,22,.35);
+}
+.visit-note p{max-width:640px;color:var(--ink-soft);font-size:15px}
+.visit-note strong{color:var(--ink)}
+
+/* Footer */
+footer{padding:clamp(44px,6vw,80px) 0 40px;color:var(--ink-soft)}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:clamp(24px,4vw,56px);margin-bottom:36px}
+.foot-grid h4{font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
+.foot-grid p,.foot-grid li{font-size:14px;line-height:1.7}
+.foot-grid ul{list-style:none}
+.foot-grid a{text-decoration:none}
+.foot-grid a:hover{color:var(--terra)}
+.legal{border-top:1px solid var(--line);padding-top:26px}
+.legal details{margin-bottom:10px;font-size:13.5px;max-width:900px}
+.legal summary{cursor:pointer;font-weight:700;color:var(--ink);padding:6px 0}
+.legal details p{margin:8px 0;color:var(--ink-soft)}
+.credits{font-size:11.5px;color:#9a9da3;margin-top:22px;line-height:1.7}
+.copyline{margin-top:26px;font-size:13px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+
+/* Animations */
+.p{opacity:0;animation:drop .85s cubic-bezier(.18,1.25,.34,1) both;animation-delay:var(--d,0s)}
+@keyframes drop{
+  0%{opacity:0;transform:translateY(-340px)}
+  55%{opacity:1}
+  75%{transform:translateY(6px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+.sway{animation:sway 4.5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 0}
+@keyframes sway{from{transform:rotate(-2.2deg)}to{transform:rotate(2.2deg)}}
+.swing{animation:swing .55s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:15% 85%}
+@keyframes swing{from{transform:rotate(-14deg)}to{transform:rotate(10deg)}}
+.bob{animation:bob 1.6s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 50%}
+@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-3px)}}
+.cloud{animation:cloudmove linear infinite}
+@keyframes cloudmove{from{transform:translateX(-180px)}to{transform:translateX(1340px)}}
+.bird{animation:birdfly 16s linear infinite;opacity:0}
+@keyframes birdfly{
+  0%{transform:translate(-80px,30px);opacity:0}
+  4%{opacity:1}
+  46%{opacity:1}
+  50%{transform:translate(1240px,-40px);opacity:0}
+  100%{opacity:0}
+}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .p{animation:none;opacity:1}
+  .sway,.swing,.bob,.cloud,.bird{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+@media (max-width:920px){
+  .site-inner{flex-wrap:wrap;padding:10px 0 6px}
+  .logo svg{height:38px}
+  nav.main{width:100%;flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+  nav.main::-webkit-scrollbar{display:none}
+  nav.main a{white-space:nowrap;font-size:13px;padding:7px 12px}
+  .hero-frame{grid-template-columns:1fr}
+  .hero-left{flex-direction:column;align-items:flex-start;gap:6px}
+  .hero-vert{writing-mode:horizontal-tb;transform:none;font-size:clamp(34px,9.4vw,64px)}
+  .hero-meta{writing-mode:horizontal-tb;transform:none;max-height:none;letter-spacing:.16em;font-size:10px}
+  .welcome-grid{grid-template-columns:1fr}
+  .fact-stack{position:static}
+  .expert{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-stage{min-height:340px}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-inner">
+    <a class="logo" href="#top" aria-label="Stadtmüller Bedachungen – Startseite">
+      <svg viewBox="0 0 436 92" role="img" aria-label="Stadtmüller Bedachungen Logo">
+        <!-- Bildmarke: Dach-Dreiecke -->
+        <polygon points="46,4 82,62 10,62" fill="#141416"/>
+        <polygon points="19,28 37,58 1,58" fill="#141416"/>
+        <polygon points="27,44 40,64 14,64" fill="#ffd400"/>
+        <polygon points="38,52 56,80 20,80" fill="none" stroke="#ffd400" stroke-width="4"/>
+        <text x="96" y="46" font-family="Archivo,system-ui,sans-serif" font-weight="900" font-size="38" letter-spacing="-1" fill="#141416">STADTMÜLLER</text>
+        <text x="98" y="76" font-family="Archivo,system-ui,sans-serif" font-weight="700" font-size="19" letter-spacing="10.5" fill="#141416">BEDACHUNGEN</text>
+      </svg>
+    </a>
+    <nav class="main" aria-label="Hauptnavigation">
+      <a href="#willkommen">Willkommen</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#dachformen">Dachformen</a>
+      <a href="#kontakt">Besichtigung</a>
+      <a href="#impressum">Impressum</a>
+      <a class="cta" href="tel:0620698700">06206&nbsp;9870-0</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <div class="wrap hero">
+    <div class="hero-frame">
+      <div class="hero-left">
+        <div class="hero-vert">STADTMÜLLER</div>
+        <div class="hero-meta">Bedachungen · Dach- Wand- &amp; Abdichtungstechnik</div>
+      </div>
+      <div class="hero-stage" id="stagePanel">
+        <svg class="scene" id="sceneSvg" viewBox="50 30 1060 660" preserveAspectRatio="xMidYMid meet" aria-label="Animierte isometrische Baustelle: Stadtmüller-Mitarbeiter decken ein Dach"></svg>
+        <div class="stage-caption">
+          <strong>MIT UNS IST ALLES IMMER GUT BEDACHT.</strong>
+          <span>Unser Team baut Ihr Dach – vom Dachstuhl bis zum letzten Ziegel.</span>
+        </div>
+        <button class="replay" id="replayBtn" title="Animation erneut abspielen" aria-label="Animation erneut abspielen">⟳</button>
+      </div>
+    </div>
+    <div class="hero-tag">
+      <h1>Seit über 80 Jahren: <em>Qualität &amp; Handwerk</em> rund ums Dach.</h1>
+      <div class="hero-actions">
+        <a class="btn btn-dark" href="#leistungen">Leistungen entdecken</a>
+        <a class="btn btn-yellow" href="#kontakt">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= WILLKOMMEN ================= -->
+  <section id="willkommen">
+    <div class="wrap">
+      <span class="kicker">Willkommen</span>
+      <h2 class="big">Willkommen bei<br>STADTMÜLLER <span class="ghost">BEDACHUNGEN</span></h2>
+      <p class="lead"><strong>Mit uns ist alles immer gut bedacht.</strong> Wir sind Ihr kompetenter und professioneller Ansprechpartner rund ums Thema Dach.</p>
+
+      <div class="welcome-grid reveal">
+        <div class="welcome-text">
+          <p>Trotz industrieller Fertigung der Dachbaustoffe ist die Eindeckung eines Daches bis heute weitgehend Handarbeit geblieben. Neben einem umfangreichen Fachwissen sind für dieses Handwerk immer auch Geschick und Fingerspitzengefühl gefragt.</p>
+          <p>Seit über 80 Jahren steht unser Traditionsunternehmen für <strong>beste Qualität und verlässliches Handwerk</strong> im Bereich Dach-, Wand- und Abdichtungstechnik. In den Metropolregionen Rhein-Neckar und Rhein-Main sind wir der kompetente Ansprechpartner für alle Projekte rund ums Thema Dachbau.</p>
+          <p>Ob privates Einfamilienhaus oder großes Industriegebäude: Unser erfahrenes und qualifiziertes Fachpersonal erledigt alle Arbeiten <strong>termingerecht, wirtschaftlich und kundenorientiert</strong>.</p>
+          <p>Ob Steil- oder Flachdach, Wärmeschutz oder Solartechnik, Gaubenausbau oder Wohnraumfenster, Neubau oder Sanierung: Wir erledigen alle Aufträge mit umfassendem Service, großer Erfahrung und echter Leidenschaft für unser Handwerk.</p>
+          <p>Informieren Sie sich bei einem virtuellen Rundgang über unsere Leistungen, unseren Service und unseren Antrieb, jeden Tag aufs Neue Kundenwünsche zur vollsten Zufriedenheit zu erfüllen.</p>
+          <p>Gerne realisieren wir auch Ihr Projekt. Rufen Sie uns einfach an. Wir beraten Sie gerne.<br><strong>Ihr Team von STADTMÜLLER BEDACHUNGEN</strong></p>
+        </div>
+        <div>
+          <div class="fact-stack">
+            <div class="fact"><div class="num">80<small>+</small></div><p>Jahre Tradition, Qualität und verlässliches Handwerk – seit Generationen in Familienhand.</p></div>
+            <div class="fact"><div class="num">2</div><p>Metropolregionen: Rhein-Neckar und Rhein-Main – wir sind vor Ort für Sie im Einsatz.</p></div>
+            <div class="fact"><div class="num">100<small>%</small></div><p>Handwerk: Vom Dachstuhl bis zum letzten Ziegel – termingerecht, wirtschaftlich, kundenorientiert.</p></div>
+          </div>
+          <div class="mgmt">
+            <div class="k">Unsere Geschäftsleitung</div>
+            <strong>Daniel Schnell</strong>
+            <span>Bauingenieur (DH + OU), Dachdeckermeister, Zimmermeister, Spenglermeister</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LEISTUNGEN ================= -->
+  <section id="leistungen">
+    <div class="wrap">
+      <span class="kicker">Unsere Leistungen</span>
+      <h2 class="big">Alles rund ums Dach –<br><span class="ghost">aus einer Hand.</span></h2>
+      <p class="lead">Von der Planung über die fachgerechte Ausführung bis hin zu nachhaltigen Pflege- und Wartungsmaßnahmen sorgen wir für den Werterhalt Ihres Objektes.</p>
+
+      <div class="cards">
+
+        <article class="card reveal">
+          <span class="icon" data-icon="dach" aria-hidden="true"></span>
+          <h3>Dacheindeckung</h3>
+          <p>Die Dacheindeckung ist ein Jahrhunderte altes Handwerk – und bis heute weitgehend Handarbeit geblieben. Wir verfügen neben Erfahrung und großem Fachwissen auch über die notwendige Fingerfertigkeit, um diese Handarbeit professionell auszuführen.</p>
+          <details><summary>Mehr erfahren</summary>
+            <p>Der Dachform, der Dachneigung und planungsrechtlichen Vorgaben entsprechend werden für die Dacheindeckung verschiedene Materialien gewählt. Die einzelnen Bauteile werden schichtweise übereinander gelegt. Seit mehr als acht Jahrzehnten steht unser Traditionsunternehmen für beste Qualität und verlässliches Handwerk im Bereich Dacheindeckung.</p>
+            <p>Ob Walmdach, Satteldach oder Pultdach: Wir erledigen alle Aufträge mit umfassendem Service, großer Erfahrung und echter Leidenschaft für unser Handwerk. Bei uns erhalten Sie alle Materialien, die Ihren Wünschen entsprechen – und unterschiedliche Verarbeitungsformen. Selbstverständlich übernehmen wir nach der Eindeckung gerne auch die Wartung und Pflege Ihres Daches.</p>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <span class="icon" data-icon="zimmer" aria-hidden="true"></span>
+          <h3>Zimmererarbeiten</h3>
+          <p>Das gesamte Bauprojekt wird inklusive Dachkonstruktion am Computer erstellt, die Holzteile werden millimetergenau abgestimmt. Die Verbindung der einzelnen Holzteile ist aber Handarbeit – und davon verstehen wir sehr viel.</p>
+          <details><summary>Mehr erfahren</summary>
+            <p>Neben der professionellen Dacheindeckung übernehmen wir auch den Aufbau Ihres Dachstuhles. Unsere Zimmermeister kennen ihr Handwerk und leisten hervorragende Arbeit. Auch individuelle Wünsche für Gauben, Carports oder Holzbalkone erfüllen unsere Zimmerer Ihnen gerne.</p>
+            <p>Wir bieten Ihnen alles rund ums Thema Dach aus einer Hand: von der Planung über die fachgerechte Ausführung bis hin zu nachhaltigen Pflege- und Wartungsmaßnahmen sorgen wir für den Werterhalt Ihres Objektes.</p>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <span class="icon" data-icon="speng" aria-hidden="true"></span>
+          <h3>Spenglerarbeiten</h3>
+          <p>Von der einfachen Reparatur Ihrer Regenrinne bis zur Errichtung eines Kupferdaches sind wir der richtige Partner für alle Klempnerarbeiten rund ums Dach.</p>
+          <div class="chips"><span class="chip">Dach</span><span class="chip">Rinne</span><span class="chip">Kamin</span><span class="chip">Ortgangsverkleidungen</span><span class="chip">Fassadenbekleidungen</span></div>
+          <details><summary>Mehr erfahren</summary>
+            <p>Wir bieten Ihnen alle Blecharbeiten, die für die Errichtung und die Instandhaltung Ihres Daches notwendig sind. Wir beraten Sie umfassend über die Auswahl der richtigen Metalle wie Kupfer, Edelstahl oder Zink. Wir gestalten komplette Blechdächer oder übernehmen die Montage von Regenrinnen und der Verkleidung von Schornsteinen.</p>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <span class="icon" data-icon="blitz" aria-hidden="true"></span>
+          <h3>Blitzschutz</h3>
+          <p>Ohne einen umfassenden Blitzschutz können Gebäudeteile bei Blitzeinschlägen stark beschädigt werden. Wir installieren vollständige Blitzschutzsysteme für die Sicherheit Ihres Dachs und des gesamten Gebäudes.</p>
+          <details><summary>Mehr erfahren</summary>
+            <p>Satellitenantennen oder Photovoltaik-Module können durch einen Blitzeinschlag zerstört werden. Auch Rohrleitungen oder Solarkollektoren sind ohne professionellen Blitzschutz gefährdet. Wir treffen die richtigen Vorkehrungen auf Ihrem Dach und sorgen mit einem umfassenden Wartungs-Service für Ihre Sicherheit.</p>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <span class="icon" data-icon="fenster" aria-hidden="true"></span>
+          <h3>Wohnraumfenster</h3>
+          <p>Wohnen und leben direkt unterm Dach: Gemütliche Dachgeschosswohnungen waren schon immer beliebt und sind zurzeit besonders angesagt.</p>
+          <details><summary>Mehr erfahren</summary>
+            <p>Der Wohnraum im obersten Stockwerk ist vielfältig nutzbar, den Gestaltungsmöglichkeiten sind fast keine Grenzen gesetzt. Die besondere Atmosphäre unter dem Dach wird durch passende Wohnraumfenster noch unterstrichen. Wir beraten Sie über die besten Modelle und planen gemeinsam mit Ihnen den perfekten Einsatz der Dachfenster.</p>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <span class="icon" data-icon="waerme" aria-hidden="true"></span>
+          <h3>Wärmeschutz</h3>
+          <p>Genießen Sie Ihre Dachwohnung – zu jeder Jahreszeit. Mit einem professionell wärmegedämmten Dach grenzen Sie den Wärmeverlust ein und senken die Energiekosten deutlich.</p>
+          <details><summary>Mehr erfahren</summary>
+            <p>Besonders in den Sommermonaten können hohe Temperaturen den Aufenthalt im nicht fachgerecht gedämmten Dachgeschoss schnell unangenehm werden lassen. Die staatliche KfW-Bank fördert die Wärmedämmung zudem mit unterschiedlichen Programmen. Wir zeigen Ihnen, welche Kosten im Einzelnen abgerechnet werden können, erledigen die Antragstellung für Sie und stellen den Kontakt zu einem Energieberater her.</p>
+            <p>Neben der heute weniger angewandten Methode des Zwischensparrens bieten wir auch die empfehlenswerte Variante des Aufsparrens an. Unsere fachgerecht ausgeführten Wärmedämmungen entsprechen selbstverständlich alle den Vorgaben der Energieeinsparverordnung (EnEV).</p>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <span class="icon" data-icon="pv" aria-hidden="true"></span>
+          <h3>Photovoltaik</h3>
+          <p>Der Einsatz von Photovoltaik-Modulen ist beim heutigen Hausbau mittlerweile zum Standard geworden. Sonnenseitige Dachflächen bieten sich besonders für die Verwendung von Photovoltaik an.</p>
+          <details><summary>Mehr erfahren</summary>
+            <p>In den auf dem Dach montierten Elementen wird durch den Einsatz von Solarzellen Sonnenlicht in elektrische Energie umgewandelt. Auch wenn die Sonne nicht direkt hell scheint, kann mit Photovoltaik Energie erzeugt werden. Wir beraten Sie gerne, wie Sie diese Technik optimal nutzen können.</p>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <span class="icon" data-icon="solar" aria-hidden="true"></span>
+          <h3>Solarthermie</h3>
+          <p>Ähnlich der Photovoltaik-Technik nutzt die Solarthermie das Sonnenlicht zur Erwärmung des Brauchwassers Ihres Haushaltes.</p>
+          <details><summary>Mehr erfahren</summary>
+            <p>Durch die Umwandlung von Sonnenenergie wird direkt nutzbare thermische Energie erzeugt. Diese Energie kommt dann vorrangig bei der Gebäudeheizung und -klimatisierung zum Einsatz. In Kombination mit einer fachmännisch durchgeführten Wärmedämmung können durch die Solarthermie Energiekosten eingespart werden. Wie ein Gewächshaus oder der Wintergarten kann auch Ihr Haus von der passiven Nutzung der Sonnenenergie profitieren.</p>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <span class="icon" data-icon="kran" aria-hidden="true"></span>
+          <h3>Kranservice</h3>
+          <p>Ihr Grundstück ist nur schwer zugänglich? Kein Problem! Mit unserem Kranservice ist nahezu jeder Winkel Ihres Gebäudes erreichbar.</p>
+          <details><summary>Mehr erfahren</summary>
+            <p>Auch Hinterhöfe oder dichte Bebauung in Wohngebieten stellen keinen Hinderungsgrund für die Durchführung von Hebe- und Montageleistungen dar. Wir helfen Ihnen an jedem Ort. Wir sind Ihr zuverlässiger Kranservice-Partner. Wir besichtigen Ihre Lage vor Ort und beraten Sie umfassend über das fachmännische Vorgehen.</p>
+            <p>Alle wichtigen Informationen zu unserem Kranservice haben wir für Sie in einem technischen Datenblatt zusammengestellt – sprechen Sie uns an, wir senden es Ihnen gerne zu.</p>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <span class="icon" data-icon="fassade" aria-hidden="true"></span>
+          <h3>Fassadenbekleidungen</h3>
+          <p>Neben einem guten Dach gehört zu einem Haus auch eine schöne und energieeffiziente Fassade. Mit den richtigen Materialien sparen Sie leicht Energiekosten ein.</p>
+          <details><summary>Mehr erfahren</summary>
+            <p>Professionell eingesetzte Wärmedämmsysteme sind sehr effektiv – und bieten vielfältige Gestaltungsmöglichkeiten. Mit einer entsprechend angelegten Fassade können Sie die Energiebilanz Ihres Gebäudes verbessern und schonen dabei die Umwelt. Durch die Verwendung unterschiedlicher Materialien wie Schiefer, Holz oder Metall setzt sich die Fassade zudem vom Standard ab.</p>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <span class="icon" data-icon="abdicht" aria-hidden="true"></span>
+          <h3>Abdichtungen</h3>
+          <p>Besonders bei Flachdächern ist die richtige Bauwerksabdichtung von großer Bedeutung. Wir erledigen die Dachabdichtung so, dass alles trocken bleibt.</p>
+          <div class="chips"><span class="chip">Bitumen</span><span class="chip">Kunststoff</span><span class="chip">Flüssig</span><span class="chip">Bauwerksabdichtung</span></div>
+          <details><summary>Mehr erfahren</summary>
+            <p>Auch bei geneigten Dachformen haben wir die passende Lösung für ein absolut dichtes Dach. Jeder Niederschlag wird komplett abgeleitet. Darüber hinaus sind wir auch für alle weiteren Bauwerksabdichtungen der richtige Ansprechpartner: egal ob Dach, Tiefgarage oder Keller.</p>
+            <p>Entscheidend für eine perfekte Bauwerksabdichtung ist neben der professionellen handwerklichen Ausführung die Auswahl des Materials. Wir verwenden beispielsweise Bitumen und Polymerbahnen oder arbeiten mit Flüssigabdichtungen – entsprechend der individuellen Begebenheiten Ihres Bauprojektes.</p>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <span class="icon" data-icon="gruen" aria-hidden="true"></span>
+          <h3>Dachbegrünung</h3>
+          <p>Lassen Sie Ihr Dach grünen! Professionelle Dachbegrünungen überzeugen nicht nur optisch – sie weisen auch viele praktische Vorteile auf.</p>
+          <details><summary>Mehr erfahren</summary>
+            <p>Mit einem Gründach holen Sie sich ein Stück Natur in Ihren täglichen Lebensraum. Sie leisten einen aktiven Beitrag zum Umweltschutz und verbessern Ihr Wohngefühl und Ihre Lebensqualität. Wir planen Ihre Dachbegrünung und führen diese professionell aus.</p>
+            <p>Sie haben die Wahl zwischen zwei Arten der Dachbegrünung: extensiv und intensiv. Für das extensive Gründach reicht ein Aufbau von 8–15 cm – die leichte Bauweise ist daher kostengünstig und empfiehlt sich für Garagen, Carports und Industriehallen. Der Aufbau des intensiven Gründachs kann mehr als 1 Meter betragen; durch die massive Bauweise ist eine Verwendung als Dachgarten möglich. Einer individuellen Gestaltung mit Rasen, Sträuchern, Stauden oder auch Bäumen sind keine Grenzen gesetzt.</p>
+          </details>
+        </article>
+
+        <article class="card reveal">
+          <span class="icon" data-icon="rwa" aria-hidden="true"></span>
+          <h3>RWA und Lichtkuppeln</h3>
+          <p>Ein durchdachter Rauchabzug ist für die Sicherheit und den Erhalt Ihres Gebäudes unerlässlich – er zählt zum vorbeugenden Brandschutz und leistet dadurch auch Personenschutz.</p>
+          <details><summary>Mehr erfahren</summary>
+            <p>Qualm, giftige Dämpfe und Wärme entstehen bei einem Brand – und sollten im Ernstfall schnell und sicher abgeleitet werden. Neben Rauchabzugsvorrichtungen und -öffnungen bieten wir Ihnen auch kombinierte Rauch- und Wärmeabzugsanlagen. Sorgen Sie vor.</p>
+          </details>
+        </article>
+
+      </div>
+
+      <!-- Dach-Experte -->
+      <div class="expert reveal" id="experte">
+        <span class="icon" data-icon="experte" aria-hidden="true"></span>
+        <div>
+          <h3>DACH-<span>EXPERTE</span> – Pflege &amp; Wartung</h3>
+          <p>Ein Dach ist immer ein sehr beanspruchter Bauteil eines Gebäudes. Die Witterung greift hier am stärksten an. Anders als die Fassade liegt das Dach nicht immer im Blickfeld – Pflege und Wartung werden fälschlicherweise oftmals vernachlässigt. Fehlende Wartung kann teuer werden, sobald Funktionssicherheit oder Bauwerksabdichtung beeinträchtigt sind.</p>
+          <p>Wir haben eigens für Pflege- und Wartungsarbeiten ein erfahrenes Team zusammengestellt, das sich um Ihr Dach kümmert und dessen Funktionalität regelmäßig kontrolliert. So können jederzeit kleinere Ausbesserungen vorgenommen werden – bevor es zur großen Reparatur kommt. Sichern Sie sich durch einen Inspektions- und Wartungsvertrag eine lange Lebensdauer Ihres Daches!</p>
+          <a class="btn btn-yellow" href="#kontakt" style="margin-top:6px">Jetzt informieren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DACHFORMEN ================= -->
+  <section id="dachformen">
+    <div class="wrap">
+      <span class="kicker">Dachformen</span>
+      <h2 class="big">Welches Dach<br><span class="ghost">passt zu Ihnen?</span></h2>
+      <p class="lead">Steildach, Satteldach, Walmdach, Pultdach oder Flachdach – jede Dachform hat ihre Stärken. Wir beraten Sie gerne, welche Variante zu Ihrem Objekt passt.</p>
+
+      <div class="roof-cards">
+
+        <article class="roof-card reveal">
+          <div class="roof-pic" data-roof="steil" aria-hidden="true"></div>
+          <div class="roof-body">
+            <span class="sub">Die Krone des Hauses</span>
+            <h3>Steildach</h3>
+            <p>Steildächer erweitern Ihre Möglichkeiten! Ein Steildach prägt das Erscheinungsbild und die Schönheit Ihres gesamten Hauses. Wie eine Krone ziert diese Dachform das Gebäude.</p>
+            <details><summary>Mehr erfahren</summary>
+              <p>Durch einen gut geplanten und von uns als Dachdecker-Innungsbetrieb fachgerecht durchgeführten Aufbau schützt das Steildach Ihr Haus vor Witterungseinflüssen und trägt dank professioneller Wärmedämmung zur Reduzierung der Energiekosten bei.</p>
+              <p>Mit einem Steildach können Sie viel Wohnraum in Ihrem obersten Stockwerk gewinnen. Gerade Dachwohnungen strahlen eine besondere Gemütlichkeit aus. Bei uns können Sie zwischen den Varianten Satteldach, Walmdach oder Pultdach wählen.</p>
+              <p>Diese Dach-Variante ist auch sehr praktisch: Auf einem Steildach können Sie beispielsweise Brauchwasser sammeln, das in eine Zisterne geleitet und für die Gartenbewässerung bereitgestellt wird. Durch moderne Solartechnik und eine Photovoltaik-Anlage kann das Steildach zur Stromgewinnung beitragen.</p>
+            </details>
+          </div>
+        </article>
+
+        <article class="roof-card reveal">
+          <div class="roof-pic" data-roof="sattel" aria-hidden="true"></div>
+          <div class="roof-body">
+            <span class="sub">Der Klassiker</span>
+            <h3>Satteldach</h3>
+            <p>Satteldächer trotzen den Witterungseinflüssen! Die vergleichsweise einfache Konstruktion erlaubt es, Dachneigung und Traufhöhen individuell nach Ihren Vorstellungen zu erstellen.</p>
+            <details><summary>Mehr erfahren</summary>
+              <p>Durch den unkomplizierten Aufbau des Dachstuhls und die rechtwinklige Dachform entfallen Details, die den Zeitaufwand für die Errichtung minimieren. Auch für eventuelle Schäden ist das Satteldach aufgrund seiner Form weniger anfällig. Die zweiseitige Dachform eröffnet zudem viele Gestaltungsmöglichkeiten, etwa mit Naturmaterialien – bei geringeren Baukosten.</p>
+              <p>Das Satteldach ist auch die witterungsbeständigste Dachform: Der Neigungsgrad sorgt dafür, dass kein Regenwasser eindringen kann und dass in den Wintermonaten der Schnee nicht schwer auf dem Dach liegen bleibt. Durch den Einbau von Dachgauben ist das Obergeschoss ideal nutzbar.</p>
+            </details>
+          </div>
+        </article>
+
+        <article class="roof-card reveal">
+          <div class="roof-pic" data-roof="walm" aria-hidden="true"></div>
+          <div class="roof-body">
+            <span class="sub">Der Langlebige</span>
+            <h3>Walmdach</h3>
+            <p>Walmdächer stehen für ihre Langlebigkeit! Im Gegensatz zum Satteldach hat das Walmdach nicht nur auf der Traufseite, sondern auch auf der Giebelseite geneigte Flächen – den sogenannten Walm.</p>
+            <details><summary>Mehr erfahren</summary>
+              <p>Walmdächer sorgen für zusätzlichen Gewinn an Wohnraum. Durch den Einsatz großflächiger Dachfenster ist es möglich, wesentlich hellere Räume zu schaffen. Da Walmdächer keine Giebel aufweisen, ist diese Dachform auch pflegeleichter – vorteilhaft auch bei Renovierungsarbeiten.</p>
+              <p>Dank der aerodynamischen Dachform weist das Walmdach eine verringerte Windlast auf. Da diese Dachform vier statt zwei Seiten aufbietet, ist mehr Platz für Solartechnik und Photovoltaik-Elemente gegeben. Die Baukosten sind etwas höher, da für die größere Dachfläche mehr Aufwand benötigt wird.</p>
+            </details>
+          </div>
+        </article>
+
+        <article class="roof-card reveal">
+          <div class="roof-pic" data-roof="pult" aria-hidden="true"></div>
+          <div class="roof-body">
+            <span class="sub">Der Moderne</span>
+            <h3>Pultdach</h3>
+            <p>Pultdächer nutzen die Sonnenenergie! Charakteristisch ist die eine geneigte Dachfläche – das Erscheinungsbild moderner Einfamilienhäuser und eine gelungene Kombination von Funktion und Design.</p>
+            <details><summary>Mehr erfahren</summary>
+              <p>Bei Einfamilienhäusern sind die Räumlichkeiten im Dachgeschoss besser nutzbar, da das nur leicht geneigte Pultdach im Vergleich zu anderen Dachformen mehr Raum bietet. Da nur eine Dachfläche aufzuschlagen ist, sind die Kosten auch geringer.</p>
+              <p>Pultdächer können zur Sonnenseite des Hauses ausgerichtet werden – ideal für Solartechnik mit Photovoltaik-Modulen. In den Wintermonaten bietet das Pultdach auch bei niedrig stehender Sonne gute Solarwerte und in den Sommermonaten angenehmen Schatten. Im Winter leiten Pultdächer die Kälte und im Sommer die Hitze besser ab – und sie sind robuster und langlebiger als eine vergleichbare Flachdach-Variante.</p>
+            </details>
+          </div>
+        </article>
+
+        <article class="roof-card reveal">
+          <div class="roof-pic" data-roof="flach" aria-hidden="true"></div>
+          <div class="roof-body">
+            <span class="sub">Der Vielseitige</span>
+            <h3>Flachdach</h3>
+            <p>Flachdächer schaffen Lebensräume! Bei fachgerechter Ausführung können die Dachflächen als Dachterrassen genutzt oder durch Grünanlagen verschönert werden.</p>
+            <details><summary>Mehr erfahren</summary>
+              <p>Bei größeren Häusern werden Flachdächer auch oft als Verkehrswege genutzt. Durch den Aufbau spezieller Anlagen können auf Flachdächern Solartechnik oder Photovoltaik verwendet werden. Eine fachgerechte Wärmedämmung entlastet Heizung und Klimaanlage, wodurch sich Energiekosten einsparen lassen.</p>
+              <p>Als Fachbetrieb für Dach-, Wand- und Abdichtungstechnik sorgen wir für die Dichtigkeit Ihres Flachdaches. Das Dach wird so geplant und ausgeführt, dass Regenwasser jederzeit richtig abfließen kann. Wir verwenden beispielsweise Bitumen und Polymerbahnen oder arbeiten mit Flüssigabdichtungen. Ein kleiner Nachteil: Diese Dachvariante ist wartungsintensiver.</p>
+            </details>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BESICHTIGUNG / KONTAKT ================= -->
+  <section id="kontakt">
+    <div class="wrap">
+      <span class="kicker">Besichtigung &amp; Kontakt</span>
+      <h2 class="big">Wir kommen<br><span class="ghost">zu Ihnen.</span></h2>
+      <p class="lead">Unser Geschäftsführer Daniel Schnell und unser Bauleiter Lothar Schrempf machen sich gerne bei Ihnen vor Ort einen Eindruck von Ihrem Bauvorhaben.</p>
+
+      <div class="team-grid">
+        <div class="person reveal">
+          <div class="avatar">DS</div>
+          <h3>Daniel Schnell</h3>
+          <div class="role">Geschäftsführer</div>
+          <p>Bauingenieur (DH + OU), Dachdeckermeister, Zimmermeister, Spenglermeister</p>
+          <div class="contact">
+            <a href="tel:0620698 7080">📞 06206 – 98 70 80</a>
+            <a href="mailto:DS@stadtmueller-bedachungen.de">✉️ DS@stadtmueller-bedachungen.de</a>
+          </div>
+        </div>
+        <div class="person reveal">
+          <div class="avatar">LS</div>
+          <h3>Lothar Schrempf</h3>
+          <div class="role">Bauleitung</div>
+          <p>Wirtschaftsingenieur, Fachrichtung Bauingenieurwesen</p>
+          <div class="contact">
+            <a href="tel:0620698 7090">📞 06206 – 98 70 90</a>
+            <a href="mailto:LS@stadtmueller-bedachungen.de">✉️ LS@stadtmueller-bedachungen.de</a>
+          </div>
+        </div>
+        <div class="person reveal">
+          <div class="avatar" style="background:var(--ink);color:var(--yellow)">SM</div>
+          <h3>Stadtmüller GmbH</h3>
+          <div class="role">Zentrale Bürstadt</div>
+          <p>Gartenstraße 2, 68642 Bürstadt</p>
+          <div class="contact">
+            <a href="tel:0620698700">📞 06206 – 9870-0</a>
+            <a href="mailto:kontakt@stadtmueller-bedachungen.de">✉️ kontakt@stadtmueller-bedachungen.de</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="visit-note reveal">
+        <p><strong>Sprechen Sie uns an – wir besuchen Sie gerne!</strong> Bei einer Besichtigung Ihres Projektes können Sie direkt mit unseren Experten die Vorgehensweise besprechen und sich über die vielfältigen Leistungen von STADTMÜLLER BEDACHUNGEN informieren.</p>
+        <a class="btn btn-dark" href="tel:0620698700">Jetzt anrufen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER / IMPRESSUM ================= -->
+  <footer id="impressum">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <h4>Impressum</h4>
+          <p><strong>Stadtmüller GmbH</strong><br>
+          Gartenstraße 2<br>68642 Bürstadt<br>
+          Telefon: 06206-9870-0<br>Telefax: 06206-9870-77<br>
+          E-Mail: <a href="mailto:kontakt@stadtmueller-bedachungen.de">kontakt@stadtmueller-bedachungen.de</a><br>
+          Internet: <a href="https://www.hausdach.com" target="_blank" rel="noopener">www.hausdach.com</a></p>
+        </div>
+        <div>
+          <h4>Öffnungszeiten</h4>
+          <ul>
+            <li>MO – DO: 7:30 – 12:00 Uhr</li>
+            <li>und 13:00 – 17:00 Uhr</li>
+            <li>FR: 7:30 – 16:00 Uhr</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <p>Geschäftsführer: Daniel Schnell<br>
+          Amtsgericht Darmstadt, HRB 60788<br>
+          USt-IdNr. gemäß §27a UStG:<br>DE 268 3333 78<br>
+          FA Bensheim Steuer Nr. 005 235 116 83</p>
+        </div>
+      </div>
+
+      <div class="legal">
+        <details>
+          <summary>Haftung für Inhalte</summary>
+          <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+        </details>
+        <details>
+          <summary>Haftung für Links</summary>
+          <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+        </details>
+        <details>
+          <summary>Urheberrecht</summary>
+          <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+        </details>
+        <details>
+          <summary>Datenschutz</summary>
+          <p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</p>
+          <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+          <p>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.</p>
+        </details>
+        <p class="credits">Fotos: © Stadtmüller Bedachungen, © focus finder – Fotolia.com, © jehafo – Fotolia.com, © KB3 – Fotolia.com, © Smileus – Fotolia.com, © Lionello Rovati – Fotolia.com, © mitifoto – Fotolia.com, © Ingo Bartussek – Fotolia.com, © bilderzwerg – Fotolia.com, © psdesign1 – Fotolia.com, © Kadmy – Fotolia.com, © Kara – Fotolia.com, © LianeM – Fotolia.com, © Alterfalter – Fotolia.com, © Wolfgang Cibura – Fotolia.com, © 3dmentat – Fotolia.com, © doncarlo – Fotolia.com, © paul90g – Fotolia.com, © pics – Fotolia.com</p>
+      </div>
+
+      <div class="copyline">
+        <span>© <span id="year"></span> Stadtmüller GmbH – STADTMÜLLER BEDACHUNGEN, Bürstadt</span>
+        <a href="#top" class="btn btn-ghost" style="padding:9px 18px;font-size:13px">Nach oben ↑</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+/* ============================================================
+   Isometrische Szenen-Engine (Hero-Animation + Mini-Icons)
+   ============================================================ */
+const SVGNS='http://www.w3.org/2000/svg';
+
+function el(name,attrs,parent){
+  const e=document.createElementNS(SVGNS,name);
+  for(const k in attrs) e.setAttribute(k,attrs[k]);
+  if(parent) parent.appendChild(e);
+  return e;
+}
+function shade(hex,f){
+  const n=parseInt(hex.slice(1),16);
+  let r=n>>16,g=(n>>8)&255,b=n&255;
+  const t=f>1?c=>Math.min(255,Math.round(c+(255-c)*(f-1))):c=>Math.round(c*f);
+  return `rgb(${t(r)},${t(g)},${t(b)})`;
+}
+function makeProj(ux,uy,uz){
+  return (x,y,z)=>[+((x-y)*ux).toFixed(2), +(((x+y)*uy)-z*uz).toFixed(2)];
+}
+function pts(P,arr){ return arr.map(p=>P(p[0],p[1],p[2]).join(',')).join(' '); }
+function poly(parent,P,arr,fill,o={}){
+  const a={points:pts(P,arr),fill};
+  if(o.stroke){a.stroke=o.stroke;a['stroke-width']=o.sw||1;a['stroke-linejoin']='round';}
+  if(o.op!==undefined)a.opacity=o.op;
+  return el('polygon',a,parent);
+}
+function line(parent,P,a,b,stroke,w,op){
+  const p1=P(a[0],a[1],a[2]),p2=P(b[0],b[1],b[2]);
+  return el('line',{x1:p1[0],y1:p1[1],x2:p2[0],y2:p2[1],stroke,'stroke-width':w||1.5,'stroke-linecap':'round',...(op!==undefined?{opacity:op}:{})},parent);
+}
+/* Quader: sichtbare Flächen +y (vorn-links), +x (rechts), oben */
+function box(parent,P,x,y,z,w,d,h,c){
+  const g=el('g',{},parent);
+  poly(g,P,[[x,y+d,z],[x+w,y+d,z],[x+w,y+d,z+h],[x,y+d,z+h]],shade(c,0.8));
+  poly(g,P,[[x+w,y,z],[x+w,y+d,z],[x+w,y+d,z+h],[x+w,y,z+h]],shade(c,0.62));
+  poly(g,P,[[x,y,z+h],[x+w,y,z+h],[x+w,y+d,z+h],[x,y+d,z+h]],shade(c,1.16));
+  return g;
+}
+
+/* ---------------- Hero-Szene ---------------- */
+const sceneSvg=document.getElementById('sceneSvg');
+const HP=makeProj(34,17,30);
+const C={
+  grass:'#9cbd80', earth:'#8a6f52', concrete:'#d4d6da', path:'#c2c6cc',
+  wall:'#f0e6d8', wood:'#d8a35c', deck:'#caa36a', tile:'#c65b3d',
+  steel:'#b9c0c7', yellow:'#ffd400', dark:'#1d1f24'
+};
+/* Haus-Geometrie */
+const X0=3,X1=9,Y0=4,Y1=10,RY=7;
+const FND=0.12, WT=2.42, RISE=1.7, ZR=WT+RISE;      /* Firsthöhe 4.12 */
+const OV=0.5, ZE=WT-OV*(RISE/3);                     /* Traufhöhe ~2.14 */
+
+let SCENE=null;
+function piece(delay,cls){
+  const g=el('g',{class:'p'+(cls?' '+cls:'')},SCENE);
+  g.style.setProperty('--d',delay+'s');
+  return g;
+}
+function worker(parent,P,x,y,z,o={}){
+  const g=el('g',{class:o.bob?'bob':''},parent);
+  box(g,P,x-0.17,y-0.15,z,0.34,0.3,0.42,'#2b3a55');
+  box(g,P,x-0.2,y-0.18,z+0.42,0.4,0.36,0.5,C.yellow);
+  box(g,P,x-0.13,y-0.12,z+0.92,0.26,0.24,0.26,'#e8b48c');
+  box(g,P,x-0.16,y-0.15,z+1.18,0.32,0.3,0.13,'#f4f4f4');
+  if(o.hammer){
+    const arm=el('g',{class:'swing'},g);
+    box(arm,P,x+0.14,y-0.06,z+0.72,0.42,0.13,0.12,'#e0b400');
+    box(arm,P,x+0.5,y-0.12,z+0.68,0.14,0.26,0.26,'#5b6068');
+  }
+  return g;
+}
+function slopeRows(P,x0,x1,yR,zR,yE,zE,rows,c,d0,step){
+  for(let i=0;i<rows;i++){
+    const t0=1-i/rows, t1=1-(i+1)/rows;
+    const ya=yR+(yE-yR)*t0, za=zR+(zE-zR)*t0+0.08;
+    const yb=yR+(yE-yR)*t1, zb=zR+(zE-zR)*t1+0.08;
+    const g=piece(d0+i*step);
+    poly(g,P,[[x0,yb,zb],[x1,yb,zb],[x1,ya,za],[x0,ya,za]],shade(c,i%2?1.07:0.99));
+    poly(g,P,[[x0,ya,za],[x1,ya,za],[x1,ya,za-0.14],[x0,ya,za-0.14]],shade(c,0.68));
+    for(let sx=x0+0.75;sx<x1;sx+=0.75){
+      line(g,P,[sx,yb,zb],[sx,ya,za],'rgba(0,0,0,.13)',1);
+    }
+  }
+}
+function buildScene(){
+  sceneSvg.innerHTML='';
+  /* Himmel-Deko: Wolken + Vögel (ohne Iso-Projektion) */
+  const sky=el('g',{},sceneSvg);
+  [[0,70,60,'46s'],[0,150,44,'62s'],[0,36,34,'54s']].forEach((cfg,i)=>{
+    const c=el('g',{class:'cloud'},sky);
+    c.style.animationDuration=cfg[3];
+    c.style.animationDelay=(-i*16)+'s';
+    el('ellipse',{cx:cfg[0],cy:cfg[1],rx:cfg[2],ry:cfg[2]*0.42,fill:'#ffffff',opacity:.75},c);
+    el('ellipse',{cx:cfg[0]+cfg[2]*0.7,cy:cfg[1]+6,rx:cfg[2]*0.7,ry:cfg[2]*0.3,fill:'#ffffff',opacity:.6},c);
+  });
+  [[0,'0s'],[0,'7s']].forEach((b,i)=>{
+    const g=el('g',{class:'bird'},sky);
+    g.style.animationDelay=b[1];
+    el('path',{d:`M0 ${90+i*40} q6 -7 12 0 q6 -7 12 0`,stroke:'#7a7f87',fill:'none','stroke-width':2.4,'stroke-linecap':'round'},g);
+  });
+
+  SCENE=el('g',{transform:'translate(580,150)'},sceneSvg);
+  const P=HP;
+
+  /* Grundstück */
+  box(piece(0),P,0,0,-0.4,14.5,14.5,0.4,C.grass);
+  poly(piece(0.15),P,[[4.6,10,0.01],[8,10,0.01],[8,14.5,0.01],[4.6,14.5,0.01]],C.path);
+  poly(piece(0.2),P,[[0,12.6,0.01],[14.5,12.6,0.01],[14.5,13.6,0.01],[0,13.6,0.01]],'#aeb3ba');
+  box(piece(0.3),P,X0-0.2,Y0-0.2,0,6.4,6.4,FND,C.concrete);
+
+  /* Bäume hinten */
+  [[1.2,1.8],[11.6,1.2]].forEach((t,i)=>{
+    const g=piece(0.4+i*0.12);
+    box(g,P,t[0]-0.12,t[1]-0.12,0,0.25,0.25,0.85,'#8a6248');
+    const c=P(t[0],t[1],1.75);
+    el('circle',{cx:c[0],cy:c[1],r:30,fill:'#79a969'},g);
+    el('circle',{cx:c[0]-9,cy:c[1]-9,r:20,fill:'#8fbe7d'},g);
+  });
+
+  /* Kran (steht früh) */
+  const crane=piece(0.7);
+  box(crane,P,11.7,4.7,0,0.55,0.55,7.2,C.yellow);
+  line(crane,P,[11.75,5.22,0.3],[12.22,5.22,6.9],'rgba(0,0,0,.22)',2);
+  line(crane,P,[12.22,5.22,0.3],[11.75,5.22,6.9],'rgba(0,0,0,.22)',2);
+  box(piece(0.9),P,11.55,4.55,7.2,0.85,0.85,0.7,'#22262b');
+  box(piece(1.05),P,5.6,4.85,7.9,6.5,0.32,0.3,C.yellow);
+  box(piece(1.05),P,12.3,4.85,7.9,1.7,0.32,0.3,C.yellow);
+  box(piece(1.1),P,13.5,4.72,7.3,0.55,0.58,0.6,'#5b6068');
+  const hangWrap=piece(1.3);
+  const hang=el('g',{class:'sway'},hangWrap);
+  line(hang,P,[6.4,5.01,7.9],[6.4,5.01,5.3],'#3a3f45',2);
+  box(hang,P,6.0,4.7,4.95,0.9,0.7,0.14,C.wood);
+  box(hang,P,6.06,4.76,5.09,0.78,0.58,0.4,C.tile);
+
+  /* Material am Boden */
+  [[10.5,10.5,1.45],[11.9,9.5,1.6]].forEach(s=>{
+    const g=piece(s[2]);
+    box(g,P,s[0],s[1],0,1.0,0.9,0.14,C.wood);
+    box(g,P,s[0]+0.07,s[1]+0.07,0.14,0.86,0.76,0.5,C.tile);
+  });
+
+  /* Wände + Giebel */
+  box(piece(1.5),P,X0,Y0,FND,X1-X0,Y1-Y0,WT-FND,C.wall);
+  const gab=piece(1.75);
+  poly(gab,P,[[X1,Y0,WT],[X1,Y1,WT],[X1,RY,ZR]],shade(C.wall,0.62));
+
+  /* Tür + Fenster */
+  const open1=piece(1.95);
+  poly(open1,P,[[5.35,Y1+0.03,FND],[6.25,Y1+0.03,FND],[6.25,Y1+0.03,1.75],[5.35,Y1+0.03,1.75]],'#3a3f45');
+  poly(open1,P,[[3.7,Y1+0.03,1.0],[4.8,Y1+0.03,1.0],[4.8,Y1+0.03,1.95],[3.7,Y1+0.03,1.95]],'#cfe8f2',{stroke:'#fff',sw:2});
+  poly(open1,P,[[7.1,Y1+0.03,1.0],[8.2,Y1+0.03,1.0],[8.2,Y1+0.03,1.95],[7.1,Y1+0.03,1.95]],'#cfe8f2',{stroke:'#fff',sw:2});
+  const open2=piece(2.05);
+  poly(open2,P,[[X1+0.03,5.0,1.0],[X1+0.03,6.1,1.0],[X1+0.03,6.1,1.95],[X1+0.03,5.0,1.95]],'#b8d8e6',{stroke:'#fff',sw:2});
+  poly(open2,P,[[X1+0.03,6.6,2.7],[X1+0.03,7.4,2.7],[X1+0.03,7.4,3.4],[X1+0.03,6.6,3.4]],'#b8d8e6',{stroke:'#fff',sw:2});
+
+  /* Dachstuhl (Sparren) */
+  [4,6,8].forEach((xi,i)=>{
+    const g=piece(2.2+i*0.15);
+    line(g,P,[xi,Y0,WT],[xi,RY,ZR],C.wood,5);
+    line(g,P,[xi,Y1,WT],[xi,RY,ZR],C.wood,5);
+    line(g,P,[xi,Y0,WT],[xi,Y1,WT],shade(C.wood,0.8),4);
+  });
+  const ridgeBeam=piece(2.6);
+  line(ridgeBeam,P,[X0-0.2,RY,ZR],[X1+0.2,RY,ZR],shade(C.wood,0.7),5);
+
+  /* Dachschalung */
+  poly(piece(2.85),P,[[X0-0.35,RY,ZR],[X1+0.35,RY,ZR],[X1+0.35,Y0-OV,ZE],[X0-0.35,Y0-OV,ZE]],shade(C.deck,1.12));
+  poly(piece(3.0),P,[[X0-0.35,RY,ZR],[X1+0.35,RY,ZR],[X1+0.35,Y1+OV,ZE],[X0-0.35,Y1+OV,ZE]],C.deck);
+  box(piece(3.12),P,X0-0.35,Y1+OV,ZE-0.22,(X1-X0)+0.7,0.08,0.2,'#f4efe6');
+
+  /* Gerüst */
+  [3.2,5.2,7.2,9.2].forEach((x,i)=>{
+    box(piece(3.2+i*0.07),P,x,10.85,0,0.12,0.12,2.7,C.steel);
+  });
+  box(piece(3.5),P,3.1,10.72,1.25,6.3,0.5,0.12,C.wood);
+  box(piece(3.6),P,3.1,10.72,2.55,6.3,0.5,0.12,C.wood);
+
+  /* Mitarbeiter */
+  worker(piece(3.75),P,5.0,10.95,2.67,{hammer:true});
+  worker(piece(3.85),P,10.4,10.6,0,{});
+
+  /* Rückseite eindecken, Kamin, Vorderseite, First */
+  slopeRows(P,X0-0.4,X1+0.4,RY,ZR,Y0-OV,ZE,5,C.tile,4.0,0.16);
+  const chim=piece(4.85);
+  box(chim,P,7.3,6.1,3.4,0.75,0.75,1.7,'#b8543a');
+  box(chim,P,7.22,6.02,5.1,0.91,0.91,0.14,'#8f8f96');
+  worker(piece(4.95),P,6.6,8.6,3.3,{bob:true});
+  slopeRows(P,X0-0.4,X1+0.4,RY,ZR,Y1+OV,ZE,7,C.tile,5.1,0.2);
+  const ridge=piece(6.6);
+  poly(ridge,P,[[X0-0.45,RY,ZR+0.22],[X1+0.45,RY,ZR+0.22],[X1+0.45,RY+0.35,ZR+0.02],[X0-0.45,RY+0.35,ZR+0.02]],shade(C.tile,0.8));
+  poly(ridge,P,[[X0-0.45,RY,ZR+0.22],[X1+0.45,RY,ZR+0.22],[X1+0.45,RY-0.35,ZR+0.02],[X0-0.45,RY-0.35,ZR+0.02]],shade(C.tile,1.1));
+  worker(piece(6.9),P,4.3,7.0,ZR+0.2,{bob:true});
+
+  /* Firmen-Transporter */
+  const van=piece(7.1);
+  box(van,P,0.6,11.6,0.3,2.1,1.05,0.8,'#1a1a1f');
+  box(van,P,0.58,11.58,0.58,2.14,1.09,0.16,C.yellow);
+  poly(van,P,[[0.78,12.68,0.78],[1.25,12.68,0.78],[1.25,12.68,1.02],[0.78,12.68,1.02]],'#9fc4d4');
+  [[1.0,12.68],[2.3,12.68]].forEach(w=>{
+    const c=P(w[0],w[1],0.3);
+    el('ellipse',{cx:c[0],cy:c[1],rx:9,ry:6.5,fill:'#111'},van);
+    el('ellipse',{cx:c[0],cy:c[1],rx:4,ry:3,fill:'#555'},van);
+  });
+
+  /* Firmenschild */
+  const sign=piece(7.3);
+  box(sign,P,10.0,11.7,0,0.12,0.12,1.05,'#2a2d33');
+  box(sign,P,9.55,11.62,1.05,1.05,0.12,0.75,'#16161a');
+  const s1=P(9.72,11.76,1.16),s2=P(10.02,11.76,1.62),s3=P(10.32,11.76,1.16);
+  el('polygon',{points:`${s1[0]},${s1[1]} ${s2[0]},${s2[1]} ${s3[0]},${s3[1]}`,fill:C.yellow},sign);
+
+  /* Busch vorn */
+  const bush=piece(7.4);
+  const bc=P(2.3,11.7,0.4);
+  el('circle',{cx:bc[0],cy:bc[1],r:17,fill:'#79a969'},bush);
+  el('circle',{cx:bc[0]-6,cy:bc[1]-5,r:11,fill:'#8fbe7d'},bush);
+}
+buildScene();
+document.getElementById('replayBtn').addEventListener('click',buildScene);
+
+/* ---------------- Mini-Icons (Leistungen) ---------------- */
+function makeIcon(builder,vb,tx,ty,u){
+  const svg=el('svg',{viewBox:vb||'0 0 150 130'});
+  const g=el('g',{transform:`translate(${tx??75},${ty??42})`},svg);
+  builder(g,makeProj(u??16,(u??16)/2,(u??16)*0.9));
+  return svg;
+}
+const ICONS={
+  dach(g,P){
+    box(g,P,0,1.5,0,2.8,1.2,0.3,C.tile);
+    box(g,P,0.35,0.75,0.55,2.8,1.2,0.3,shade(C.tile,1.12));
+    box(g,P,0.7,0,1.1,2.8,1.2,0.3,C.tile);
+  },
+  zimmer(g,P){
+    box(g,P,0,0.3,0,3.1,0.6,0.6,C.wood);
+    box(g,P,0,1.5,0,3.1,0.6,0.6,shade(C.wood,0.9));
+    box(g,P,1.0,-0.2,0.7,0.7,2.8,0.6,shade(C.wood,1.1));
+  },
+  speng(g,P){
+    box(g,P,0,0,0,2.7,1.9,0.14,C.steel);
+    box(g,P,0.3,2.2,0,2.0,0.55,0.5,shade(C.steel,0.85));
+    const c=P(1.4,1.0,1.15);
+    el('circle',{cx:c[0],cy:c[1],r:15,fill:'#8f9aa4'},g);
+    el('circle',{cx:c[0],cy:c[1],r:6,fill:'#eef1f3'},g);
+  },
+  blitz(g,P){
+    box(g,P,1.1,1.1,0,0.7,0.7,0.16,C.steel);
+    box(g,P,1.38,1.38,0.16,0.15,0.15,2.3,'#8f9aa4');
+    const t=P(1.46,1.46,2.6);
+    el('polygon',{points:`${t[0]+8},${t[1]-26} ${t[0]-8},${t[1]-2} ${t[0]-1},${t[1]-2} ${t[0]-10},${t[1]+22} ${t[0]+10},${t[1]-6} ${t[0]+3},${t[1]-6}`,fill:C.yellow},g);
+  },
+  fenster(g,P){
+    poly(g,P,[[0,0,2.1],[3,0,2.1],[3,2.5,0.7],[0,2.5,0.7]],C.tile);
+    poly(g,P,[[0.85,0.6,1.79],[2.15,0.6,1.79],[2.15,1.7,1.17],[0.85,1.7,1.17]],'#cfe8f2',{stroke:'#fff',sw:3});
+  },
+  waerme(g,P){
+    box(g,P,0,0,0,2.7,2,0.4,'#9aa1a9');
+    box(g,P,0,0,0.4,2.7,2,0.45,C.yellow);
+    box(g,P,0,0,0.85,2.7,2,0.3,C.tile);
+  },
+  pv(g,P){
+    poly(g,P,[[0,0,2.1],[3,0,2.1],[3,2.5,0.7],[0,2.5,0.7]],'#2b3d55');
+    line(g,P,[0,0.85,1.63],[3,0.85,1.63],'rgba(255,255,255,.5)',2);
+    line(g,P,[0,1.7,1.15],[3,1.7,1.15],'rgba(255,255,255,.5)',2);
+    line(g,P,[1,0,2.1],[1,2.5,0.7],'rgba(255,255,255,.5)',2);
+    line(g,P,[2,0,2.1],[2,2.5,0.7],'rgba(255,255,255,.5)',2);
+  },
+  solar(g,P){
+    poly(g,P,[[0,0.4,1.9],[2.6,0.4,1.9],[2.6,2.5,0.7],[0,2.5,0.7]],'#3d4c63');
+    const s=P(2.6,0.2,2.9);
+    el('circle',{cx:s[0],cy:s[1],r:13,fill:C.yellow},g);
+    for(let i=0;i<8;i++){
+      const a=i*Math.PI/4;
+      el('line',{x1:s[0]+Math.cos(a)*17,y1:s[1]+Math.sin(a)*17,x2:s[0]+Math.cos(a)*23,y2:s[1]+Math.sin(a)*23,stroke:C.yellow,'stroke-width':3,'stroke-linecap':'round'},g);
+    }
+  },
+  kran(g,P){
+    box(g,P,1.9,1.4,0,0.4,0.4,2.4,C.yellow);
+    box(g,P,0.1,1.45,2.4,2.6,0.3,0.26,C.yellow);
+    line(g,P,[0.5,1.6,2.4],[0.5,1.6,1.1],'#3a3f45',2);
+    box(g,P,0.32,1.42,0.75,0.38,0.36,0.36,C.tile);
+  },
+  fassade(g,P){
+    box(g,P,0,0,0,2.6,0.55,2.2,C.wall);
+    line(g,P,[0.65,0.58,0],[0.65,0.58,2.2],'rgba(0,0,0,.18)',2);
+    line(g,P,[1.3,0.58,0],[1.3,0.58,2.2],'rgba(0,0,0,.18)',2);
+    line(g,P,[1.95,0.58,0],[1.95,0.58,2.2],'rgba(0,0,0,.18)',2);
+  },
+  abdicht(g,P){
+    box(g,P,0,1.1,0,3,1.3,0.12,'#3a3f45');
+    const c=P(0.6,1.75,0.75);
+    el('circle',{cx:c[0],cy:c[1],r:17,fill:'#2a2d33'},g);
+    el('circle',{cx:c[0],cy:c[1],r:7,fill:'#8f9aa4'},g);
+  },
+  gruen(g,P){
+    box(g,P,0,0,0,2.7,2,0.55,'#b28460');
+    poly(g,P,[[0,0,0.55],[2.7,0,0.55],[2.7,2,0.55],[0,2,0.55]],'#7fae6f');
+    [[0.7,0.6],[1.8,0.9],[1.1,1.5]].forEach(b=>{
+      const c=P(b[0],b[1],0.75);
+      el('circle',{cx:c[0],cy:c[1],r:7,fill:'#5d9350'},g);
+    });
+  },
+  rwa(g,P){
+    box(g,P,0,0,0,2.5,2,0.45,C.steel);
+    const c=P(1.25,1,0.45);
+    el('ellipse',{cx:c[0],cy:c[1],rx:22,ry:13,fill:'#cfe8f2',opacity:.92},g);
+  },
+  experte(g,P){
+    poly(g,P,[[0,0,1.9],[2.8,0,1.9],[2.8,2.3,0.65],[0,2.3,0.65]],C.tile);
+    const c=P(1.4,1.0,1.4);
+    el('circle',{cx:c[0],cy:c[1],r:17,fill:'none',stroke:'#ffffff','stroke-width':6},g);
+    el('line',{x1:c[0]+13,y1:c[1]+13,x2:c[0]+27,y2:c[1]+27,stroke:'#ffffff','stroke-width':7,'stroke-linecap':'round'},g);
+  }
+};
+document.querySelectorAll('[data-icon]').forEach(node=>{
+  const b=ICONS[node.dataset.icon];
+  if(b) node.appendChild(makeIcon(b));
+});
+
+/* ---------------- Dachform-Illustrationen ---------------- */
+function miniHouse(g,P,type){
+  const W=2.6,D=2.2,c=C.wall,roof=C.tile,ov=0.28;
+  const H=type==='flach'?1.5:1.15;
+  const drawBody=()=>{
+    box(g,P,0,0,0,W,D,H,c);
+    poly(g,P,[[0.6,D+0.02,0.02],[1.1,D+0.02,0.02],[1.1,D+0.02,0.85],[0.6,D+0.02,0.85]],'#3a3f45');
+    poly(g,P,[[1.6,D+0.02,0.45],[2.2,D+0.02,0.45],[2.2,D+0.02,0.95],[1.6,D+0.02,0.95]],'#cfe8f2',{stroke:'#fff',sw:2});
+  };
+  if(type==='sattel'||type==='steil'){
+    const rise=type==='steil'?1.6:0.85, ry=D/2, zr=H+rise;
+    drawBody();
+    poly(g,P,[[W,0,H],[W,D,H],[W,ry,zr]],shade(c,0.62));
+    poly(g,P,[[-ov,ry,zr+0.04],[W+ov,ry,zr+0.04],[W+ov,-ov,H-0.14],[-ov,-ov,H-0.14]],shade(roof,1.14));
+    poly(g,P,[[-ov,ry,zr+0.04],[W+ov,ry,zr+0.04],[W+ov,D+ov,H-0.14],[-ov,D+ov,H-0.14]],roof);
+    if(type==='steil'){
+      poly(g,P,[[0.75,D*0.72,H+rise*0.42],[1.45,D*0.72,H+rise*0.42],[1.45,D*0.88,H+rise*0.2],[0.75,D*0.88,H+rise*0.2]],'#cfe8f2',{stroke:'#fff',sw:2});
+    }
+  }else if(type==='walm'){
+    const rise=0.9, ry=D/2, zr=H+rise, r0=0.85, r1=W-0.85;
+    drawBody();
+    poly(g,P,[[r0,ry,zr],[r1,ry,zr],[W+ov,-ov,H-0.14],[-ov,-ov,H-0.14]],shade(roof,1.14));
+    poly(g,P,[[r0,ry,zr],[r1,ry,zr],[W+ov,D+ov,H-0.14],[-ov,D+ov,H-0.14]],roof);
+    poly(g,P,[[r1,ry,zr],[W+ov,-ov,H-0.14],[W+ov,D+ov,H-0.14]],shade(roof,0.8));
+  }else if(type==='pult'){
+    const rise=1.0;
+    poly(g,P,[[W,0,H+rise],[W,D,H],[W,0,H]],shade(c,0.55));
+    drawBody();
+    poly(g,P,[[W,0,H],[W,D,H],[W,0,H+rise]],shade(c,0.62));
+    poly(g,P,[[-ov,-ov,H+rise+0.04],[W+ov,-ov,H+rise+0.04],[W+ov,D+ov,H-0.1],[-ov,D+ov,H-0.1]],roof);
+    line(g,P,[0.3,0.5,H+rise-0.25],[2.3,0.5,H+rise-0.25],'rgba(255,255,255,.45)',2);
+  }else if(type==='flach'){
+    drawBody();
+    box(g,P,-0.06,-0.06,H,W+0.12,D+0.12,0.14,'#5b6068');
+    poly(g,P,[[0.25,0.25,H+0.15],[W-0.25,0.25,H+0.15],[W-0.25,D-0.25,H+0.15],[0.25,D-0.25,H+0.15]],'#7fae6f');
+  }
+}
+document.querySelectorAll('[data-roof]').forEach(node=>{
+  const svg=el('svg',{viewBox:'0 0 220 180'});
+  const g=el('g',{transform:'translate(110,72)'},svg);
+  miniHouse(g,makeProj(26,13,23),node.dataset.roof);
+  node.appendChild(svg);
+});
+
+/* ---------------- Scroll-Reveal + Jahr ---------------- */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
